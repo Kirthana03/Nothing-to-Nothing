@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src = "state-toggle.js"></script>
+    <title>Nothing to Nothing</title>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+        <img id="01" src ="Assets/Ideax_01.png">
+        <img id ="02" src="Assets/Ideax_02.png">
+        </a-assets>
+        <a-entity position = "0 0 5">
+            <a-camera user-height = "1.5">
+                <a-entity>
+                    <a-cursor
+                      geometry="primitive:sphere ; radius:0.008"
+                      color="#FFF281">
+                    </a-cursor>
+                </a-entity>
+            </a-camera>
+
+        </a-entity>
+        <a-plane
+          color = "#090909"
+          rotation = "-90 0 0"
+          scale = "125 872 1"
+          position = "0 0.5 0">
+        </a-plane>
+        <a-sky
+          color = "#000000"
+        ></a-sky>
+        <a-circle
+          position = "5 2 0"
+          radius = "0.04"
+          side = "double"
+          color = "#ffffff"
+          animation = "property: scale; to:1.1 1.1; dir:alternate; dur:1500; loop:true"
+          state-toggle>
+          <a-text 
+           position = "-0.47 0.4 0"
+           value = "Enter life"
+           width = "4"
+           shader = "msdf"
+           font= "https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/spacemono/SpaceMono-Regular.json"
+           >
+          </a-text>
+        </a-circle>
+        <a-curvedimage
+        src = "#01"
+        position = "0 1.5 3"
+        theta-length = "90"
+        theta-start = "135"
+        radius = "0.354"
+        height = "0.5"
+        scale = "4 4 1"
+        >
+       </a-curvedimage>
+
+
+    </a-scene>
+    
+</body>
+</html>
